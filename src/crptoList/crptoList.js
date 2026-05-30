@@ -1,19 +1,24 @@
 import React from "react";
+import "../styles.css";
+
 function crptoList(props) {
   return (
-    <>
+    <div className="sidebar">
       <ul>
         {props.crypto.map((list) => (
           <li
             key={list.id}
-            style={{ cursor: "pointer", padding: 20 + "px", width: 20 + "em" }}
+            className="listClasee"
+            onClick={() => {
+              props.clickCapture(list);
+            }}
           >
             <img src={list.image} style={{ height: 50 + "px" }} />
             {list.name}
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 
